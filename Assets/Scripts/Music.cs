@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AudioScript : MonoBehaviour
+public class Music : MonoBehaviour
 {
     AudioSource m_AudioSource;
     // Start is called before the first frame update

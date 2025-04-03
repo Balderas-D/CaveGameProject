@@ -55,5 +55,6 @@ public class LevelLoader : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
+        PlayerPrefs.SetFloat("ClipTime", m_AudioSource.time);
     }
 }
