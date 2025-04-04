@@ -25,7 +25,7 @@ public class ScalePlane : MonoBehaviour
     private void MatchPlaneToScreenSize()
     {
         float planeToCameraDistance = Vector3.Distance(gameObject.transform.position, Camera.main.transform.position);
-        float planeHeightScale = (2.0f * Mathf.Tan(0.5f * Camera.main.fieldOfView * Mathf.Deg2Rad) * planeToCameraDistance) / 5.2f;
+        float planeHeightScale = (2f * Mathf.Tan(0.5f * Camera.main.fieldOfView * Mathf.Deg2Rad) * planeToCameraDistance) / 5f;
         float planeWidthScale = planeHeightScale * Camera.main.aspect;
         gameObject.transform.localScale = new Vector3(planeWidthScale, 1, planeHeightScale);
     }
