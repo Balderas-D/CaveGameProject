@@ -28,11 +28,11 @@ public class PlayerController : MonoBehaviour
         }
         else if (start == "Left")
         {
-           gameObject.transform.position = new Vector3(-10,Y,0);
+           gameObject.transform.position = new Vector3(-9,Y,0);
         }
         else if(start == "Right")
         {
-            gameObject.transform.position = new Vector3(10, Y, 0);
+            gameObject.transform.position = new Vector3(9, Y, 0);
         }
     }
 
