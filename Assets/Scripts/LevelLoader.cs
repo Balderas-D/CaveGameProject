@@ -39,6 +39,32 @@ public class LevelLoader : MonoBehaviour
         PlayerPrefs.SetFloat("ClipTime", m_AudioSource.time);
     }
 
+    public void Up()
+    {
+        Debug.Log(SceneNumber);
+        SceneNumber++;
+        Debug.Log(SceneNumber);
+        if (SceneNumber < SceneManager.sceneCountInBuildSettings)
+        {
+            
+            PlayerPrefs.SetString("Start", "Bottom");
+            SceneManager.LoadScene(SceneNumber);
+        }
+        PlayerPrefs.SetFloat("ClipTime", m_AudioSource.time);
+    }
+
+    public void Down()
+    {
+        SceneNumber--;
+
+        if (SceneNumber >= 0)
+        { 
+            PlayerPrefs.SetString("Start", "Top");
+            SceneManager.LoadScene(SceneNumber);
+        }
+        PlayerPrefs.SetFloat("ClipTime", m_AudioSource.time);
+    }
+
     public void LastLevel()
     {
         SceneNumber--;
