@@ -44,6 +44,14 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(9, Y, 0);
         }
+        else if (start == "Top")
+        {
+            gameObject.transform.position = new Vector3(0, 3, 0);
+        }
+        else if (start == "Bottom")
+        {
+            gameObject.transform.position = new Vector3(0, -4, 0);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
