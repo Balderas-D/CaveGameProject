@@ -9,13 +9,23 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    private Vector2 mousePosition;
     private Animator animator;
+    public GameObject bullet;
+    private Vector3 bulletDirection;
+    public Transform shootFrom;
+    public Quaternion playerRotation;
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        SetStartPos(); 
+        SetStartPos();
+        
+    }
+    private void Start()
+    {
+        playerRotation = gameObject.transform.rotation;
     }
 
     private void SetStartPos()
@@ -51,17 +61,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
+    public void OnFire(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            Attack();
+            Fire();
         }
     }
 
-    public void Attack()
+
+    
+
+    public void Fire()
     {
-        Debug.Log("Attack");
+        Quaternion bulletRotation = playerRotation;
+        
+        GameObject firedBullet = Instantiate(bullet, shootFrom.transform.position, bulletRotation, null);
+        firedBullet.GetComponent<Bullet>().bulletDirection = bulletDirection;
+        firedBullet.GetComponent<Bullet>().bulletRotation = bulletRotation;
     }
 
     private void FixedUpdate()
@@ -75,6 +92,26 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Walking", false);
         }
         rb.velocity = moveInput * moveSpeed;
+    }
+
+    public void Update()
+    {
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 direction = (mouseWorldPosition - transform.position);
+        bulletDirection = direction.normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Rotate the player on Z-axis to face the mouse
+        playerRotation = Quaternion.Euler(0f, 0f, angle);
+        transform.rotation = playerRotation;
+       
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        mousePosition = context.ReadValue<Vector2>();
+        
+       
     }
 
 
