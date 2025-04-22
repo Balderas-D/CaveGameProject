@@ -26,7 +26,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 
     // Update is called once per frame
