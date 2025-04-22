@@ -9,6 +9,11 @@ public class LstLvl : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject.FindObjectOfType<LevelLoader>().LastLevel();
+        if (other.gameObject.name == "NewPlayer")
+        {
+            GameObject.FindObjectOfType<LevelLoader>().LastLevel();
+        }
     }
+
+    
 }

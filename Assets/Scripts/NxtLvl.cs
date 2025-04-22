@@ -9,7 +9,9 @@ public class NxtLvl : MonoBehaviour
 {
         private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject.FindObjectOfType<LevelLoader>().NextLevel();
-
+        if (other.gameObject.name == "NewPlayer")
+        {
+            GameObject.FindObjectOfType<LevelLoader>().NextLevel();
+        }
     }
 }

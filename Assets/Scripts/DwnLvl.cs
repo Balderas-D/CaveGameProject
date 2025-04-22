@@ -6,7 +6,11 @@ public class DwnLvl : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject.FindObjectOfType<LevelLoader>().Down();
+        if (other.gameObject.name == "NewPlayer")
+        {
+            GameObject.FindObjectOfType<LevelLoader>().Down();
 
+        }
     }
+
 }
