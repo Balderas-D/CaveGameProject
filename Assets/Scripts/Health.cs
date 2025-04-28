@@ -23,10 +23,12 @@ public class Health : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
-        if (health == 0)
+        if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Time.timeScale = 0;
+            gameObject.SetActive(false);
             gameOver.gameObject.SetActive(true);
+
         }
     }
 }

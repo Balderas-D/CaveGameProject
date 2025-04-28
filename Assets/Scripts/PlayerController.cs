@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
+        Time.timeScale = 1;
         playerRotation = gameObject.transform.rotation;
     }
 

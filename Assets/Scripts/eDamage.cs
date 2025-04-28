@@ -5,8 +5,8 @@ using UnityEngine;
 public class eDamage : MonoBehaviour
 {
     public eHealth ehealth;
-    public int teamId = 1;
-    public float damage;
+    public int teamId = 0;
+    public float edamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class eDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<eHealth>().health -= damage;
+            other.gameObject.GetComponent<eHealth>().ehealth -= edamage;
         }
     }
 
