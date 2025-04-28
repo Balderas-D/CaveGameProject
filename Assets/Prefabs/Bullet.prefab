@@ -319,4 +319,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ehealth: {fileID: 0}
   teamId: 0
-  damage: 25
+  edamage: 25
