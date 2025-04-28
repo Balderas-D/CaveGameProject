@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float bulletSpeed = 5.0f;
+    public float bulletSpeed = 10000.0f;
     public float bulletLife = 3.0f;
     public Vector3 bulletDirection;
     public Quaternion bulletRotation;
