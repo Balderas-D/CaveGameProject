@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed = 5f;
+    public float threshold = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,10 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveCheracter(movement);
+        if((player.position - transform.position).magnitude <= threshold)
+        {
+            moveCheracter(movement);
+        }
+        
     }
 }

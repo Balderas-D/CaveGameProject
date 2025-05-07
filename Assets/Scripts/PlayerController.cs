@@ -35,15 +35,15 @@ public class PlayerController : MonoBehaviour
         float Y = PlayerPrefs.GetFloat("Y", 0);
         if (start == "Center")
         {
-            gameObject.transform.position = Vector3.zero;
+            gameObject.transform.position = new Vector3(-7, -3, 0);
         }
         else if (start == "Left")
         {
-           gameObject.transform.position = new Vector3(-9,Y,0);
+           gameObject.transform.position = new Vector3(-7,-3,0);
         }
         else if(start == "Right")
         {
-            gameObject.transform.position = new Vector3(9, Y, 0);
+            gameObject.transform.position = new Vector3(26, 29, 0);
         }
         else if (start == "Top")
         {
