@@ -268,6 +268,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 8f36c813-4d6d-4016-a8da-ab324285a997
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3569322176184263701}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e115d91f-2828-41cd-b1ed-5e790be33d8e
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -289,6 +305,7 @@ MonoBehaviour:
   bullet: {fileID: 8790068313826080824, guid: 547e76132dcc35244b3038bcfa716329, type: 3}
   shootFrom: {fileID: 5472744806083051641}
   playerRotation: {x: 0, y: 0, z: 0, w: 0}
+  levelLoader: {fileID: 0}
 --- !u!50 &4878947453465079827
 Rigidbody2D:
   serializedVersion: 4
