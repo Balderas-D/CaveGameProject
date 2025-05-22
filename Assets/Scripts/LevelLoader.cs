@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -9,11 +10,16 @@ public class LevelLoader : MonoBehaviour
     public GameObject player;
     AudioSource m_AudioSource;
     public int enemyNumber = 3;
+    public GameObject paused;
+
+
+    public GameObject test;
 
     public void Start()
     {
         m_AudioSource = GameObject.FindObjectOfType<AudioSource>();
         enemyNumber = GameObject.FindObjectsOfType<Enemy>().Length;
+        paused.SetActive(false);
     }
 
     public void Update()
@@ -109,5 +115,23 @@ public class LevelLoader : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void PauseGame()
+    {
+        paused.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        paused.SetActive(false);
+
     }
 }

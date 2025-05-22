@@ -15,12 +15,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 bulletDirection;
     public Transform shootFrom;
     public Quaternion playerRotation;
+    public LevelLoader levelLoader;
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         SetStartPos();
+       
         
     }
     private void Start()
@@ -72,14 +74,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (Time.timeScale != 0f)
         {
-            Fire();
+            if (context.performed)
+            {
+                Fire();
+            }
         }
     }
-
-
-    
 
     public void Fire()
     {
@@ -121,6 +123,20 @@ public class PlayerController : MonoBehaviour
         mousePosition = context.ReadValue<Vector2>();
         
        
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Pause();
+        }
+    }
+
+    public void Pause()
+    {
+        Debug.Log("Paused");
+        levelLoader.PauseGame();
     }
 
 

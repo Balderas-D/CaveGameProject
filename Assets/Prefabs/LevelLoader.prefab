@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyNumber: 3
+  enemyNumber: 5
+  paused: {fileID: 0}
+  test: {fileID: 0}
