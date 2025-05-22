@@ -4022,7 +4022,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7357259406302711600, guid: e0bda4fefeb22d4498dc2c2f8498ee55, type: 3}
   m_PrefabInstance: {fileID: 1280521594}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1903330445
+--- !u!43 &1892922185
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4997,6 +4997,10 @@ PrefabInstance:
     - target: {fileID: 1888305904792514310, guid: 02c0174e3b822b6459a29a92bec768d7, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178757571983388841, guid: 02c0174e3b822b6459a29a92bec768d7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6358557580558784688, guid: 02c0174e3b822b6459a29a92bec768d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
